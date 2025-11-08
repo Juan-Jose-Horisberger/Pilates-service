@@ -6,15 +6,18 @@ module.exports = (sequelize) => {
     sequelize.define(
         'user',
         {
-            // Al crear el usuario, por defecto se crean estos datos:
             id: {
                 type: DataTypes.UUID,
                 defaultValue: DataTypes.UUIDV4,
                 primaryKey: true
             },
-            rol: {
-                type: DataTypes.ENUM('STUDENT', 'ADMIN', 'INSTRUCTOR'),
-                defaultValue: 'STUDENT'
+            name: {
+                type: DataTypes.STRING,
+                allowNull: true,
+            },
+            surname: {
+                type: DataTypes.STRING,
+                allowNull: true,
             },
             email: {
                 type: DataTypes.STRING,
@@ -23,6 +26,14 @@ module.exports = (sequelize) => {
                 validate: {
                     isEmail: true,
                 },
+            },
+            password: {
+                type: DataTypes.STRING,
+                allowNull: true,
+            },
+            rol: {
+                type: DataTypes.ENUM('STUDENT', 'ADMIN', 'INSTRUCTOR'),
+                defaultValue: 'STUDENT'
             },
             image: {
                 type: DataTypes.STRING,

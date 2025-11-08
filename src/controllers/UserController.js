@@ -16,11 +16,13 @@ const getUsers = async (req, res) => {
 // POST
 const createUser = async (req, res) => {
   try{
-    const {rol, email, image} = req.body;
+    const {rol, email, name, surname, image} = req.body;
 
     const newUser = await User.create({
-      rol: rol,
-      email: email,
+      name,
+      surname,
+      rol,
+      email,
       image: image ?? ''
     })
 

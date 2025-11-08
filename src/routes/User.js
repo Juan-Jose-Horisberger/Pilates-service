@@ -7,7 +7,6 @@ const router = Router()
 router.get('/', getUsers);
 
 // POST
-// router.post('/register', register); //Este desarrollo se trabajara mas adelante
 router.post('/create-user', createUser); 
 
 // PATCH

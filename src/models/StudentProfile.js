@@ -23,11 +23,6 @@ module.exports = (sequelize) => {
                 onDelete: 'CASCADE',
             },
 
-            name: {
-                type: DataTypes.STRING,
-                allowNull: false,
-            },
-
             age: {
                 type: DataTypes.INTEGER,
                 defaultValue: DataTypes.NOW,
@@ -36,11 +31,6 @@ module.exports = (sequelize) => {
                     min: 0,
                     max: 120, // límite lógico
                 },
-            },
-
-            surname: {
-                type: DataTypes.STRING,
-                allowNull: false,
             },
 
             height: {
